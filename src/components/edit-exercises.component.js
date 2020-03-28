@@ -24,7 +24,7 @@ export default class EditExercises extends Component {
 
     componentDidMount(){
     axios.get('http://localhost:5000/exercises/'+this.props.match.params.id)
-        .then(response => {
+        .then(response => { 
             this.setState({
                 username: response.data.username,
                 description: response.data.description,
@@ -85,7 +85,7 @@ export default class EditExercises extends Component {
         console.log(exercise);
 
 
-        axios.post('http://localhost:5000/exercise/update/'+this.props.match.params.id, exercise)
+        axios.post('http://localhost:5000/exercises/update/'+this.props.match.params.id, exercise)
         .then(res => console.log(res.data));
 
         window.location = "/";
